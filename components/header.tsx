@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image';
 import { Dialog, DialogPanel } from '@headlessui/react';
+import Link from 'next/link';
 
 const navigation = [
     { name: 'Inicio', href: '#' },
@@ -15,13 +16,16 @@ const navigation = [
 
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    // TODO: implement section to
+
+
 
     return (
         <>
             <header className="inset-x-0 top-0 z-50 bg-white/5 backdrop-blur-xl dark:bg-zinc-900/5">
                 <nav aria-label="Global" className="flex items-center justify-between p-3 lg:px-8">
                     <div className="flex lg:flex-1">
-                        <a href="#" className="-m-1.5 p-1.5">
+                        <Link href="/" className="-m-1.5 p-1.5">
                             <span className="sr-only">Your Company</span>
                             <Image
                                 sizes='100vw'
@@ -39,7 +43,7 @@ const Header = () => {
                                 src="/img/logo.svg"
                                 className="h-16 w-auto not-dark:hidden"
                             />
-                        </a>
+                        </Link>
                     </div>
                     <div className="flex lg:hidden">
                         <button
@@ -70,14 +74,20 @@ const Header = () => {
                         <div className="flex items-center justify-between">
                             <a href="#" className="-m-1.5 p-1.5">
                                 <span className="sr-only">Your Company</span>
-                                <img
+                                <Image
+                                    sizes='100vw'
+                                    height={0}
+                                    width={0}
                                     alt=""
-                                    src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+                                    src="/img/logo.svg"
                                     className="h-8 w-auto dark:hidden"
                                 />
-                                <img
+                                <Image
+                                    sizes='100vw'
+                                    height={0}
+                                    width={0}
                                     alt=""
-                                    src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+                                    src="/img/logo.svg"
                                     className="h-8 w-auto not-dark:hidden"
                                 />
                             </a>
