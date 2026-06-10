@@ -59,9 +59,9 @@ const Header = () => {
                         ))}
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                        <a href="#" className="text-sm/6 font-semibold text-gray-900 dark:text-white">
+                        {/* <a href="#" className="text-sm/6 font-semibold text-gray-900 dark:text-white">
                             Log in <span aria-hidden="true">&rarr;</span>
-                        </a>
+                        </a> */}
                     </div>
                 </nav>
                 <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
