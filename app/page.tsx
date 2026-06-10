@@ -191,7 +191,7 @@ export default function Home() {
               </svg> */}
               <div className="mt-10 flex items-center gap-x-6">
                 <a
-                  href="/img/PLAN-DE-TRABAJO-VLADI- ARANYA.pdf"
+                  href="/img/PLAN-DE-TRABAJO-VLADI-ARANYA.pdf"
                   className="rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 dark:bg-red-500 dark:hover:bg-red-400 dark:focus-visible:outline-red-500 flex items-center gap-x-2"
                   download
                 >
