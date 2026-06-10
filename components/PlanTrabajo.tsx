@@ -31,7 +31,7 @@ const plugins = [
 // import dynamic from 'next/dynamic';
 
 // Link the canvas worker to a CDN source for processing
-const PlanTrabajo = ({ fileUrl = '/img/PLAN-DE-TRABAJO-VLADI- ARANYA.pdf' }: { fileUrl?: string }) => {
+const PlanTrabajo = ({ fileUrl = '/img/PLAN-DE-TRABAJO-VLADI-ARANYA.pdf' }: { fileUrl?: string }) => {
     const { engine, isLoading } = usePdfiumEngine();
 
     if (isLoading || !engine) {
