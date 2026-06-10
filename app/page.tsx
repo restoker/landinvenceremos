@@ -132,7 +132,7 @@ export default function Home() {
 
       <main>
         {/* Hero section */}
-        <div className="relative isolate">
+        <div id="hero-section" className="relative isolate">
           {/* <svg
             aria-hidden="true"
             className="absolute inset-0 -z-10 size-full mask-[radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-200 dark:stroke-white/10"
@@ -218,7 +218,7 @@ export default function Home() {
         </div>
 
         {/* Feature section */}
-        <div className="mx-auto mt-12 max-w-7xl px-6 sm:mt-36 lg:px-8">
+        <div id="principles-section" className="mx-auto mt-12 max-w-7xl px-6 sm:mt-36 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
             {/* <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">Deploy faster</h2> */}
             <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance dark:text-white">
@@ -330,7 +330,7 @@ export default function Home() {
         </div>
 
         {/* FAQ section */}
-        <div className="mx-auto mt-12 max-w-7xl px-6 sm:mt-36 lg:px-8 h-dvh">
+        <div id="work-plan-section" className="mx-auto mt-12 max-w-7xl px-6 sm:mt-36 lg:px-8 h-dvh">
           <div className="mx-auto max-w-4xl">
             <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white text-center py-10">
               Plan de trabajo

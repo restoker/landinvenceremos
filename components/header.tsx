@@ -1,24 +1,45 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image';
 import { Dialog, DialogPanel } from '@headlessui/react';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 
 const navigation = [
-    { name: 'Inicio', href: '#' },
-    { name: 'Principios', href: '#' },
-    { name: 'Plan de trabajo', href: '#' },
+    { name: 'Inicio', href: 'hero-section' },
+    { name: 'Principios', href: 'principles-section' },
+    { name: 'Plan de trabajo', href: 'work-plan-section' },
     // { name: 'Company', href: '#' },
 ]
 
 const Header = () => {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     // TODO: implement section to
 
+    const goToAboutRef = useRef<(to: string) => void | string>(null);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const navRef = useRef<HTMLDivElement>(null);
+    const pathname = usePathname();
+    const router = useRouter();
 
+    useEffect(() => {
+        const scrollTo = (to: string) => {
+            const section = document.getElementById(to);
+            if (!section) return;
+            if (to === 'hero-section') {
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: "smooth"
+                });
+                return;
+            }
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+        goToAboutRef.current = scrollTo;
+    }, [])
 
     return (
         <>
@@ -31,6 +52,7 @@ const Header = () => {
                                 sizes='100vw'
                                 height={0}
                                 width={0}
+                                loading='eager'
                                 alt=""
                                 src="/img/logo.svg"
                                 className="h-16 w-auto dark:hidden"
@@ -39,6 +61,7 @@ const Header = () => {
                                 sizes='100vw'
                                 height={0}
                                 width={0}
+                                loading='eager'
                                 alt=""
                                 src="/img/logo.svg"
                                 className="h-16 w-auto not-dark:hidden"
@@ -57,9 +80,13 @@ const Header = () => {
                     </div>
                     <div className="hidden lg:flex lg:gap-x-12">
                         {navigation.map((item) => (
-                            <a key={item.name} href={item.href} className="text-sm/6 font-semibold text-gray-900 dark:text-white">
+                            <div
+                                key={item.name}
+                                className="text-sm/6 font-semibold text-gray-900 dark:text-white"
+                                onClick={() => goToAboutRef.current?.(item.href)}
+                            >
                                 {item.name}
-                            </a>
+                            </div>
                         ))}
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -78,11 +105,13 @@ const Header = () => {
                                     sizes='100vw'
                                     height={0}
                                     width={0}
+                                    loading='eager'
                                     alt=""
                                     src="/img/logo.svg"
                                     className="h-8 w-auto dark:hidden"
                                 />
                                 <Image
+                                    loading='eager'
                                     sizes='100vw'
                                     height={0}
                                     width={0}
@@ -104,13 +133,13 @@ const Header = () => {
                             <div className="-my-6 divide-y divide-gray-500/10 dark:divide-gray-500/25">
                                 <div className="space-y-2 py-6">
                                     {navigation.map((item) => (
-                                        <a
+                                        <div
                                             key={item.name}
-                                            href={item.href}
                                             className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5"
+                                            onClick={() => goToAboutRef.current?.(item.href)}
                                         >
                                             {item.name}
-                                        </a>
+                                        </div>
                                     ))}
                                 </div>
                                 {/* <div className="py-6">
