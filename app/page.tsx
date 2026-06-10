@@ -198,9 +198,9 @@ export default function Home() {
                   <ArchiveBoxArrowDownIcon className="size-5" />
                   Plan de gobierno 2026 - 2030
                 </a>
-                {/* <a href="#" className="text-sm/6 font-semibold text-gray-900 dark:text-white">
-                  Learn more <span aria-hidden="true">→</span>
-                </a> */}
+                <div className="text-sm/6 font-semibold text-gray-900 dark:text-white">
+                  <span aria-hidden="true">←</span> Presiona aquí para descargar
+                </div>
               </div>
             </div>
             <div className="mt-16 sm:mt-24 lg:mt-0 lg:shrink-0 lg:grow flex justify-center items-center">
