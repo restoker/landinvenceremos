@@ -336,16 +336,16 @@ export default function Home() {
               Plan de trabajo
             </h2>
 
-            <div style={{ width: '100%', height: '600px' }}>
+            {/* <div style={{ width: '100%', height: '500px' }}>
               <embed
                 src={`/img/PLAN-DE-TRABAJO-VLADI-ARANYA.pdf#toolbar=0`}
                 type="application/pdf"
                 width="100%"
                 height="100%"
               />
-            </div>
+            </div> */}
 
-            {/* <PlanTrabajo /> */}
+            <PlanTrabajo />
           </div>
         </div>
       </main>

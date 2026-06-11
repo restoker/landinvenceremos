@@ -3,7 +3,7 @@
 import { createPluginRegistration } from '@embedpdf/core';
 import { EmbedPDF } from '@embedpdf/core/react';
 import { usePdfiumEngine } from '@embedpdf/engines/react';
-import { useZoom } from '@embedpdf/plugin-zoom/react';
+// import { useZoom } from '@embedpdf/plugin-zoom/react';
 
 // Import the essential plugins
 import { Viewport, ViewportPluginPackage } from '@embedpdf/plugin-viewport/react';
@@ -14,8 +14,8 @@ import {
 } from '@embedpdf/plugin-document-manager/react';
 import { RenderLayer, RenderPluginPackage } from '@embedpdf/plugin-render/react';
 import { ZoomPluginPackage, ZoomMode } from '@embedpdf/plugin-zoom/react';
-import { ZoomToolbar } from './ZoomToolbar';
-
+// import { ZoomToolbar } from './ZoomToolbar';
+import { PDFViewer } from '@embedpdf/react-pdf-viewer';
 // 1. Register the plugins you need
 const plugins = [
     createPluginRegistration(DocumentManagerPluginPackage, {
@@ -28,6 +28,7 @@ const plugins = [
         defaultZoomLevel: ZoomMode.FitPage, // You can pass options here!
     }),
 ];
+
 // import dynamic from 'next/dynamic';
 
 // Link the canvas worker to a CDN source for processing
@@ -39,39 +40,15 @@ const PlanTrabajo = ({ fileUrl = '/img/PLAN-DE-TRABAJO-VLADI-ARANYA.pdf' }: { fi
     }
 
     return (
-        <div style={{ height: '500px' }}>
-            <ZoomToolbar documentId={fileUrl} />
-            <EmbedPDF engine={engine} plugins={plugins}>
-                {({ activeDocumentId }) =>
-                    activeDocumentId && (
-                        <DocumentContent documentId={activeDocumentId}>
-                            {({ isLoaded }) =>
-                                isLoaded && (
-                                    <Viewport
-                                        documentId={activeDocumentId}
-                                        style={{
-                                            backgroundColor: '#f1f3f5',
-                                        }}
-                                    >
-                                        <Scroller
-                                            documentId={activeDocumentId}
-                                            renderPage={({ width, height, pageIndex }) => (
-                                                <div style={{ width, height }}>
-                                                    {/* The RenderLayer is responsible for drawing the page */}
-                                                    <RenderLayer
-                                                        documentId={activeDocumentId}
-                                                        pageIndex={pageIndex}
-                                                    />
-                                                </div>
-                                            )}
-                                        />
-                                    </Viewport>
-                                )
-                            }
-                        </DocumentContent>
-                    )
-                }
-            </EmbedPDF>
+        <div className='relative h-dvh overflow-hidden'>
+            {/* <ZoomToolbar documentId={fileUrl} /> */}
+            <PDFViewer
+                className='h-125'
+                config={{
+                    src: fileUrl,
+                    // theme: { preference: 'light' }
+                }}
+            />
         </div>
     );
 };
