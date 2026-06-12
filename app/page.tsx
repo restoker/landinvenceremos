@@ -12,6 +12,7 @@ import Image from 'next/image';
 import CardSection from '@/components/CardSection';
 import PlanTrabajo from '@/components/PlanTrabajo';
 import { ArchiveBoxArrowDownIcon, BuildingOffice2Icon, UserCircleIcon } from '@heroicons/react/24/outline';
+import CurveTextTrail from '@/components/CurveTextTrail';
 // import PlanTrabajo from '@/components/PlanTrabajo';
 
 const features = [
@@ -293,8 +294,8 @@ export default function Home() {
                   </p>
                 </blockquote>
                 <figcaption className="mt-6 text-base text-white dark:text-gray-200">
-                  <div className="font-semibold">Vlady Aranya</div>
-                  <div className="mt-1">Mag.</div>
+                  <div className="font-semibold">Mgtr. Vlady Aranya</div>
+                  <div className="mt-1">Candidato.</div>
                 </figcaption>
               </figure>
             </div>
@@ -347,6 +348,17 @@ export default function Home() {
 
             <PlanTrabajo />
           </div>
+        </div>
+
+        <div className="mt-12 px-6 sm:mt-36 lg:px-8 relative">
+          {/* <div className="mx-auto max-w-4xl"> */}
+          {/* <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white text-center py-10">
+              Plan de trabajo
+            </h2> */}
+
+          <CurveTextTrail />
+
+          {/* </div> */}
         </div>
       </main>
 

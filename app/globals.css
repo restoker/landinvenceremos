@@ -134,6 +134,49 @@ body {
   color: #F1F1F1;
 }
 
+/* curve scroll */
+.mwg_effect032 .scroll {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mwg_effect032 .pin-height {
+  height: 400vh;
+}
+
+.mwg_effect032 .contenedor {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  overflow: hidden;
+}
+
+.mwg_effect032 .header {
+  position: absolute;
+  top: 25px;
+  left: 35%;
+  width: 30%;
+  text-align: center;
+}
+
+.mwg_effect032 svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  transform: translate(0, 50%) scale(1.1, 1.1)
+    /* Scaling to avoid seeing letter at the start and end */
+}
+
+.mwg_effect032 textPath {
+  fill: currentColor;
+  font: 500 normal 10vw/normal 'Inter', sans-serif;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
 @media (max-width: 768px) {
   .mwg_effect087 .card {
     width: 70vw;
@@ -145,5 +188,16 @@ body {
 
   .mwg_effect087 .card-content .top {
     font-size: 20px;
+  }
+
+  .mwg_effect032 .header {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    width: auto;
+  }
+
+  .mwg_effect032 textPath {
+    font: 500 normal 50vw/normal 'Inter', sans-serif;
   }
 }
